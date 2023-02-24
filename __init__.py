@@ -21,6 +21,12 @@ def register():
     from bpy.utils import register_class
 
     for cls in classes:
+      try:
+        bpy.utils.unregister_class(cls)
+      except RuntimeError:
+        pass
+    
+    for cls in classes:
       register_class(cls)
       
     bpy.types.Scene.my_tool = bpy.props.PointerProperty(type = MyProperties)
@@ -29,10 +35,10 @@ def register():
     
     
 def unregister():
-    from bpy.utils import register_class
+    from bpy.utils import unregister_class
 
     for cls in reversed(classes):
-      unregister(cls)
+      unregister_class(cls)
 
 if __name__ == "__main__":
     register()

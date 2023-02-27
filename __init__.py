@@ -1,5 +1,5 @@
 bl_info = {
-    "name" : "unity-exporter",
+    "name" : "exporter",
     "author" : "ekin-nohutcu",
     "description" : "",
     "blender" : (3, 3, 1),

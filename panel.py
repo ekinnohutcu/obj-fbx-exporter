@@ -6,7 +6,7 @@ class Exporter_Panel(Panel):
     bl_label = 'Exporter Panel'
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = 'Unity Exporter'
+    bl_category = 'Exporter'
     
     def draw(self, context):
         layout = self.layout
@@ -21,4 +21,4 @@ class Exporter_Panel(Panel):
         row = layout.row()
         row.prop(context.scene.my_tool, 'apply_transform', text = 'Apply Transform')
         row = layout.row()
-        row.operator('export.unity', text = 'Export to Unity')
+        row.operator('export.unity', text = 'Export to Folder')
